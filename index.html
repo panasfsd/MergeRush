@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10182b">
+    <title>MergeRush</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="map-normal">
+
+    <div class="game-background" aria-hidden="true">
+        <div class="background-glow glow-one"></div>
+        <div class="background-glow glow-two"></div>
+        <div class="background-grid"></div>
+    </div>
+
+    <main class="game-container">
+
+        <header class="top-bar">
+            <div class="left-controls">
+                <div class="coins">
+                    <span class="coin-icon">🪙</span>
+                    <span id="coins">0</span>
+                </div>
+                <button class="icon-button" id="exitButton"
+                    aria-label="Reiniciar tablero" title="Nuevo tablero">↻</button>
+            </div>
+
+            <div class="score-area">
+                <div class="record">
+                    <span>🏆</span>
+                    <span id="record">0</span>
+                </div>
+                <div class="accumulation" id="accumulation">0</div>
+            </div>
+
+            <button class="icon-button menu-button" id="menuButton"
+                aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </header>
+
+        <section class="event-panel" id="eventPanel">
+            <div class="event-heading">
+                <span id="eventIcon">🌲</span>
+                <strong id="eventName">Bosque tranquilo</strong>
+            </div>
+
+            <div class="event-detail" id="eventDetail">
+                Próximo evento en <span id="eventCountdown">00:45</span>
+            </div>
+
+            <div class="event-progress">
+                <span id="eventProgress"></span>
+            </div>
+        </section>
+
+        <section class="block-preview">
+            <div class="preview-block number-block" id="currentBlock">2</div>
+
+            <div class="next-wrap" aria-label="Siguiente bloque">
+                <div class="number-block next-block" id="nextBlock">2</div>
+            </div>
+        </section>
+
+        <section class="board-section">
+            <div class="game-board" id="gameBoard"
+                aria-label="Tablero de juego"></div>
+        </section>
+
+        <p class="game-hint" id="gameHint">
+            Toca una columna para soltar el bloque
+        </p>
+
+        <section class="powerups">
+            <button class="powerup" id="undoButton"
+                title="Deshacer (próximamente)" disabled>
+                <span>↶</span><small>3</small>
+            </button>
+            <button class="powerup" id="bombButton"
+                title="Destruir bloque (próximamente)" disabled>
+                <span>💣</span><small>2</small>
+            </button>
+            <button class="powerup" id="swapButton"
+                title="Cambiar bloque (próximamente)" disabled>
+                <span>🔄</span><small>5</small>
+            </button>
+            <button class="powerup" id="wildButton"
+                title="Comodín (próximamente)" disabled>
+                <span>⭐</span><small>1</small>
+            </button>
+        </section>
+
+    </main>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="settings-panel">
+            <button class="close-menu" id="closeMenu"
+                aria-label="Cerrar">✕</button>
+
+            <h2>MERGERUSH</h2>
+            <p>
+                Tu partida comienza con el tablero vacío.
+                Tus monedas y récord se conservan.
+            </p>
+
+            <button class="menu-action" id="continueButton">
+                CONTINUAR
+            </button>
+
+            <button class="menu-action secondary" id="resetProgressButton">
+                BORRAR PROGRESO GUARDADO
+            </button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
